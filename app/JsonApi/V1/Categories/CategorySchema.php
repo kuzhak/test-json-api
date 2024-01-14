@@ -24,10 +24,18 @@ class CategorySchema extends Schema
      */
     public static string $model = Category::class;
 
+    //todo понять куда нужно описывать аннотации
     /**
-     * Get the resource fields.
-     *
-     * @return array
+     * @OA\Get(
+     *     path="/api/v1/categories",
+     *     summary="Get categories",
+     *     description="Get categories",
+     *     security={ {"sanctum": {} }},
+     *     @OA\Response(
+     *         response="200",
+     *         description="Successful response",
+     *     )
+     * )
      */
     public function fields(): array
     {
